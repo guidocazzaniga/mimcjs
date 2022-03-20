@@ -1,0 +1,23 @@
+def mimc_cipher(field input, field[<rounds>] round_constants, field k) -> (field):
+  field a = 0
+
+  for u32 i in 0..<rounds> do
+    a = input + round_constants[i] + k
+    input = a ** 7
+  endfor
+
+  return input + k
+
+def mimc_hash(field[2] input, field[<rounds>] round_constants) -> (field):
+  field k = 0
+
+  for u32 i in 0..2 do
+    k = mimc_cipher(input[i], round_constants, k)
+  endfor
+
+  return k
+
+def main(private field[2] preimage) -> (field):
+  field[<rounds>] round_constants = <round_constants>
+
+  return mimc_hash(preimage, round_constants)

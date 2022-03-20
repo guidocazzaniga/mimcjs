@@ -1,0 +1,21 @@
+{
+  "name": "mimcjs",
+  "version": "1.0.0",
+  "description": "An implementation of MiMC hash in Javascript, based on https://github.com/HarryR/ethsnarks/blob/master/ethsnarks/mimc/permutation.py",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mimc",
+    "hash"
+  ],
+  "author": "guidocazzaniga",
+  "license": "ISC",
+  "bin": {
+    "mimc": "./cli.js"
+  },
+  "dependencies": {
+    "keccak256": "1.0.6"
+  }
+}
