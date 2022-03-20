@@ -32,8 +32,10 @@ $ npm install mimcjs
 
 ```js
 const mimcjs = require('mimcjs')
-const point = [1,2]
-var hash = mimcjs.mimc(point)
+const point1 = [1,2]
+const point2 = [123,"0x55DC2CF4057e4D6D78eE7Ea5170B58c04D2c08a7"]
+var hash1 = mimcjs.mimc(point1)
+var hash2 = mimcjs.mimc(point2)
 ```
 
 ## CLI
