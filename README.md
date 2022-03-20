@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/guidocazzaniga/mimcjs)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue)](https://github.com/guidocazzaniga/mimcjs)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 # mimcjs
@@ -38,6 +38,7 @@ var hash = mimcjs.mimc(point)
 
 ## CLI
 Some commands are available from CLI:
+- `mimc help` show commands
 - `mimc hash <point>` perform MiMC hash on a point
 - `mimc generate-constants <seed>` generate round constants starting from a seed (number or string)
 - `mimc set-rounds <rounds>` set DEFAULT_ROUNDS parameter
