@@ -1,8 +1,9 @@
 const keccak256 = require('keccak256')
 const fs = require('fs')
+const path = require('path')
 
 // Read default parameters from config file
-let rawdata = fs.readFileSync('config.json');
+let rawdata = fs.readFileSync(path.resolve(__dirname, "config.json"));
 const config = JSON.parse(rawdata);
 const DEFAULT_ROUNDS = config['DEFAULT_ROUNDS']
 const P = BigInt(config['SNARK_SCALAR_FIELD'])

@@ -2,6 +2,7 @@
 const {generateRoundConstants} = require('./constants')
 const {mimc} = require('./index.js')
 const fs = require('fs')
+const path = require('path')
 
 // replaceAll function to perform substitutions on ZoKrates template
 String.prototype.replaceAll = function (find, replace) {
@@ -9,7 +10,7 @@ String.prototype.replaceAll = function (find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 };
 
-let rawdata = fs.readFileSync('config.json');
+let rawdata = fs.readFileSync(path.resolve(__dirname, "config.json"));
 const config = JSON.parse(rawdata)
 
 /**
