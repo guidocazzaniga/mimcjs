@@ -1,6 +1,6 @@
 {
   "name": "mimcjs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An implementation of MiMC hash in Javascript, based on https://github.com/HarryR/ethsnarks/blob/master/ethsnarks/mimc/permutation.py",
   "main": "index.js",
   "scripts": {

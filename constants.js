@@ -41,14 +41,14 @@ function generateRoundConstants(seed){
  * @param {*} constants round constants
  */
 function writeToFile(constants){
-    let rawdata = fs.readFileSync('config.json');
+    let rawdata = fs.readFileSync(path.resolve(__dirname, "config.json"));
     const config = JSON.parse(rawdata);
     constants.forEach((element,i) => {
         constants[i]= element.toString()+"n"
     });
     config['ROUND_CONSTANTS'] = constants
     let data = JSON.stringify(config);
-    fs.writeFileSync('config.json', data);
+    fs.writeFileSync(path.resolve(__dirname, "config.json"), data);
 }
 
 module.exports = {generateRoundConstants}

@@ -39,7 +39,7 @@ function changeRounds(n){
     try{
         config['DEFAULT_ROUNDS'] = parseInt(n)
         let data = JSON.stringify(config);
-        fs.writeFileSync('config.json', data);
+        fs.writeFileSync(path.resolve(__dirname, "config.json"), data);
         console.log("Default rounds count set successfully.")
     } catch(e) {
         console.log(e)
@@ -54,7 +54,7 @@ function changeDefaultExponent(n){
     try{
         config['DEFAULT_EXPONENT'] = parseInt(n)
         let data = JSON.stringify(config);
-        fs.writeFileSync('config.json', data);
+        fs.writeFileSync(path.resolve(__dirname, "config.json"), data);
         console.log("Default exponent set successfully.")
     } catch (e){
         console.log(e)
@@ -66,7 +66,7 @@ function changeDefaultExponent(n){
  * using ROUND_CONSTANTS and DEFAULT_ROUNDS parameters
  */
 function exportZokratesCircuit(){
-    let rawdata = fs.readFileSync('template/mimc_hash.txt','utf8');
+    let rawdata = fs.readFileSync(path.resolve(__dirname, 'template/mimc_hash.txt'),'utf8');
     let converted = config['ROUND_CONSTANTS']
     var finalString = "["
     for(var i=0; i<converted.length; i++){
@@ -98,6 +98,18 @@ switch(process.argv[2]){
         break;
     case "export-circuit":
         exportZokratesCircuit()
+        break;
+    case "help":
+        console.log('   mimc hash <point>')
+        console.log('       perform MiMC hash on a point')
+        console.log('   mimc generate-constants <seed>')
+        console.log('       generate round constants starting from a seed (number or string)')
+        console.log('   mimc set-rounds <rounds>')
+        console.log('       set DEFAULT_ROUNDS parameter')
+        console.log('   mimc set-exponent <exponent>')
+        console.log('       set DEFAULT_EXPONENT parameter')
+        console.log('   mimc export-circuit')
+        console.log('       export a .zok program to compute MiMC hash in ZoKrates using default parameters ROUND_CONSTANTS and DEFAULT_ROUNDS')
         break;
     default:
         console.log("Invalid command")
