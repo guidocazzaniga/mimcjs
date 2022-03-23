@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/version-1.0.2-blue)](https://github.com/guidocazzaniga/mimcjs)
+[![Version](https://img.shields.io/badge/version-1.0.5-blue)](https://github.com/guidocazzaniga/mimcjs)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 # mimcjs
